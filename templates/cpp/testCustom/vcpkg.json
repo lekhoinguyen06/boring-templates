@@ -1,7 +1,0 @@
-{
-  "name": "lecpp",
-  "version": "0.1.0",
-  "dependencies": [
-    "fmt"
-  ]
-}
