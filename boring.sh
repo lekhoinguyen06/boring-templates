@@ -11,11 +11,15 @@ SCRIPT_DIR="$(cd "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")" && pwd)"
 source "$SCRIPT_DIR/lib/usage.sh"
 source "$SCRIPT_DIR/lib/project.sh"
 source "$SCRIPT_DIR/lib/update.sh"
+source "$SCRIPT_DIR/lib/custom.sh"
 
 # Main script logic
 case "${1:-}" in
     "create")
         create_project "$2" "$3"
+        ;;
+    "custom")
+        handle_custom_command "$2" "$3" "$4"
         ;;
     "update")
         update_templates
