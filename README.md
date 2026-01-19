@@ -1,6 +1,6 @@
 # Boring Templates
 
-A modular CLI tool for scaffolding new projects from templates with custom template support.
+A community template library and CLI tool for scaffolding new projects from templates with custom template support.
 
 ## Installation
 
