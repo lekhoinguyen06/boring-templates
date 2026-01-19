@@ -2,7 +2,7 @@
 
 A templete repository and CLI tool for scaffolding new projects from templates.
 
-### Installation
+## Installation
 
 Initialize CLI:
 ```bash
