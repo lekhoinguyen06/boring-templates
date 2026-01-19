@@ -1,68 +1,50 @@
 # Boring Templates
 
-A collection of project templates for quick scaffolding.
-
-## Usage
-
-The `boring` CLI tool helps you quickly create new projects from templates.
+A templete repository and CLI tool for scaffolding new projects from templates.
 
 ### Installation
 
-Init cli:
+Initialize CLI:
 ```bash
+git clone <https://github.com/lekhoinguyen06/boring-templates.git>
 cd /boring-templates
-chmod +x initBoring.sh
+chmod +x init.sh lib/*.sh
 rm /usr/local/bin/boring # Run this remove existing link with the boring command
-ln -s "$(pwd)/initBoring.sh" /usr/local/bin/boring
+ln -s "$(pwd)/boring.sh" /usr/local/bin/boring
 ```
 
-Usage:
-```bash
-boring <template> <app-name>
-```
-
-### Commands
-
-#### Create a C++ Project
+## Usage
 
 ```bash
-./initBoring.sh cpp <project-name>
+# Create a new project from a template
+./boring create <template> <project-name>
+
+# Update templates from git
+./boring update
+
+# Show help
+./boring help
 ```
 
-This will create a new directory with the specified name containing a complete C++ project template with:
-- CMake configuration
-- vcpkg dependency management
-- Development scripts
-- Project structure with `include/` and `src/` directories
-- Example main.cpp with fmt library
+## Available Commands
 
-**Examples:**
-```bash
-./initBoring.sh cpp myApp
-./initBoring.sh cpp game-engine
-./initBoring.sh cpp calculator
+- `create` - Create a new project from a template
+- `update` - Pull latest template changes from git repository
+- `help` - Show usage information
+
+## Project Structure
+
+```
+boring-templates/
+├── boring              # Main CLI script (macOS/Linux)
+├── boring.ps1          # PowerShell version (Windows)
+├── boring.bat          # Batch wrapper (Windows)
+├── lib/                # Modular library functions (Unix only)
+│   ├── usage.sh        # Help and usage functions
+│   ├── project.sh      # Project creation logic
+│   └── update.sh       # Git update functionality
+├── cpp/                # C++ project template
+├── vite/               # Vite project template
+└── README.md
 ```
 
-### Available Templates
-
-- **cpp**: Modern C++ project with CMake and vcpkg
-
-### Getting Help
-
-```bash
-./initBoring.sh --help
-```
-
-## Template Structure
-
-### C++ Template (`cpp/`)
-
-The C++ template includes:
-- Modern CMake setup (3.21+)
-- vcpkg for dependency management
-- clang-format configuration
-- Development and watch scripts
-- Proper project structure
-- Example with fmt library
-
-After creating a project, follow the setup instructions in the generated README.md.
