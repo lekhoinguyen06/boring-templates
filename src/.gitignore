@@ -1,0 +1,15 @@
+# Build artifacts
+build/
+
+# vcpkg artifacts (manifest mode)
+vcpkg_installed/
+
+# Editor / OS
+.DS_Store
+.idea/
+.vscode/
+
+# Compiled binaries
+*.o
+*.obj
+*.exe
